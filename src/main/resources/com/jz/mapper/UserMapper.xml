@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jz.mapper.UserMapper">
+
+<!--    <select id="getUserRole" resultType="com.jz.pojo.HgTbRole">-->
+<!--        select r.*-->
+<!--        from ${prefix}user_role ur,-->
+<!--             ${prefix}role r-->
+<!--        where ur.role_id = r.role_id-->
+<!--          and ur.user_id = #{userId}-->
+<!--    </select>-->
+
+    <select id="getUserPermission" resultType="com.jz.pojo.HgTbPermission">
+        select p.*
+        from ${prefix}role_permission rp,
+             ${prefix}permission p
+        where rp.permission_id = p.permission_id
+          and rp.role_id = #{roleId}
+    </select>
+
+</mapper>
+

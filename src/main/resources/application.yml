@@ -1,0 +1,35 @@
+server:
+  port: 3333
+
+spring:
+  application:
+    name: hougu_rbac_aop
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: zhangzhuo
+    password: 1234
+    url: jdbc:mysql://localhost/hg?characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+  redis:
+    host: localhost
+    port: 6379
+    database: 2
+
+mybatis-plus:
+  type-aliases-package: com.jz.pojo
+  mapper-locations: com/jz/mapper/*Mapper.xml
+  global-config:
+    db-config:
+      table-prefix: hg_tb_
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  configuration-properties:
+    prefix:
+      hg_tb_
+
+swagger:
+  basePackage: com.jz.controller
+  title: hg_rbac_aop
+  description: swagger
+  version: 1.0
+  contact: 1273734851@qq.com
